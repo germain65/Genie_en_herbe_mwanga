@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<noscript><p>Activez JavaScript pour accéder au site complet.</p></noscript>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classement des Joueurs — GEH IMGoma</title>
+  <meta name="description" content="Classement individuel de tous les joueurs du Championnat de Génies en Herbe de l'Institut Mwanga.">
+  <meta property="og:title" content="Classement des Joueurs — GEH IMGoma">
+  <meta property="og:description" content="Classement individuel de tous les joueurs.">
+  <meta property="og:image" content="https://geh-imgoma.github.io/assets/images/og-default.jpg">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <meta name="theme-color" content="#1A3A6B">
+  <link rel="canonical" href="https://geh-imgoma.github.io/classement-joueurs.html">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=Syne:wght@600;700;800&display=swap" as="style" onload="this.rel='stylesheet'">
+  <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script>window.GEH_BASE = '.';</script>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-follower" id="cursor-follower"></div>
+
+<header class="site-header" role="banner">
+  <div class="container"><div class="header-inner" style="display:flex; justify-content:space-between; align-items:center; width:100%;">
+    <a href="index.html" class="header-brand">
+      <div class="header-logo"><i class="ph-duotone ph-graduation-cap" aria-hidden="true"></i></div>
+      <div class="header-title"><strong>GEH Mwanga</strong><span>Institut Mwanga de Goma · RDC</span></div>
+    </a>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mainNav">
+  <i class="ph-bold ph-list" id="hamburgerIcon"></i>
+</button>
+  <nav class="main-nav" id="mainNav">
+      <a href="index.html"><i class="ph-bold ph-house" aria-hidden="true"></i> Accueil</a>
+      <a href="classement-joueurs.html" class="active"><i class="ph-bold ph-user-list" aria-hidden="true"></i> Joueurs</a>
+      <a href="classement.html"><i class="ph-bold ph-list-numbers" aria-hidden="true"></i> Classement</a>
+      <a href="archives.html"><i class="ph-bold ph-clock-counter-clockwise" aria-hidden="true"></i> Archives</a>
+      <span class="nav-edition-badge">...</span>
+    </nav>
+  </div></div>
+</header>
+
+<div class="page-hero">
+  <div class="container">
+    <span class="page-hero-eyebrow"><i class="ph-fill ph-crown" style="color:var(--color-gold);"></i> Palmarès Individuel</span>
+    <h1>Classement des Joueurs</h1>
+    <p>Performances individuelles de tous les participants du Championnat.</p>
+  </div>
+</div>
+
+<main>
+  <section class="section" style="padding-top:2rem;">
+    <div class="container">
+
+      <!-- Filtres -->
+      <div class="fade-up" style="display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:3rem; align-items:center;">
+        <label for="filterEdition" style="font-weight:600; color:var(--color-text-secondary);">
+          <i class="ph-bold ph-funnel" aria-hidden="true"></i> Filtrer :
+        </label>
+        <select id="filterEdition" class="btn btn-outline btn-dark" style="padding:0.6rem 1.2rem; border-radius:var(--radius-sm); font-size:0.95rem; background:white; color:var(--color-primary);">
+          <option value="">Toutes les éditions</option>
+        </select>
+        <select id="filterSpecialite" class="btn btn-outline btn-dark" style="padding:0.6rem 1.2rem; border-radius:var(--radius-sm); font-size:0.95rem; background:white; color:var(--color-primary);">
+          <option value="">Toutes les spécialités</option>
+        </select>
+      </div>
+
+      <!-- Top 3 Podium -->
+      <div class="fade-up" style="margin-bottom:4rem;">
+        <span class="section-label">Hall of Fame</span>
+        <h2 style="margin-bottom:2rem;">Top 3 — MVP du Championnat</h2>
+        <div class="grid-cards" id="joueursPodium">
+          <p style="text-align:center;"><i class="ph-bold ph-spinner-gap ph-spin" aria-hidden="true"></i> Chargement...</p>
+        </div>
+      </div>
+
+      <!-- Tableau complet -->
+      <div class="fade-up">
+        <span class="section-label">Classement Général</span>
+        <h2 style="margin-bottom:2rem;">Tous les Joueurs</h2>
+        <div class="table-responsive">
+          <table id="joueursTable">
+            <thead>
+              <tr>
+                <th data-dir="asc" style="width:50px;" class="text-center">Rang</th>
+                <th style="width:50px;">Photo</th>
+                <th data-dir="asc">Nom</th>
+                <th data-dir="asc">Classe</th>
+                <th data-dir="asc" title="Matchs Joués">MJ <i class="ph-bold ph-caret-up-down" aria-hidden="true"></i></th>
+                <th data-dir="asc" title="Points Totaux">Points <i class="ph-bold ph-caret-up-down" aria-hidden="true"></i></th>
+                <th data-dir="asc" title="Moyenne par match">Moy/match <i class="ph-bold ph-caret-up-down" aria-hidden="true"></i></th>
+                <th data-dir="asc" title="Meilleure performance">Meilleure perf. <i class="ph-bold ph-caret-up-down" aria-hidden="true"></i></th>
+                <th data-dir="asc">Spécialité</th>
+                <th>Forme <small style="opacity:0.6;">(5 derniers)</small></th>
+              </tr>
+            </thead>
+            <tbody id="joueursTableBody">
+              <tr><td colspan="10" style="text-align:center;padding:3rem;">
+                <i class="ph-bold ph-spinner-gap ph-spin" aria-hidden="true"></i> Calcul en cours...
+              </td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-bg-pattern"></div>
+  <div class="footer-tricolor"></div>
+  <div class="container footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="brand-logo"><div class="footer-logo-circle"><i class="ph-duotone ph-graduation-cap" aria-hidden="true"></i></div><strong>Institut Mwanga de Goma</strong></div><p style="color:rgba(255,255,255,0.6); font-size:0.9rem;">Site officiel du Championnat de Génies en Herbe.</p></div>
+      <div class="footer-col"><h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html"><i class="ph-bold ph-caret-right" aria-hidden="true"></i> Accueil</a></li>
+          <li><a href="classement-joueurs.html"><i class="ph-bold ph-caret-right" aria-hidden="true"></i> Joueurs</a></li>
+          <li><a href="classement.html"><i class="ph-bold ph-caret-right" aria-hidden="true"></i> Classement</a></li>
+          <li><a href="bracket.html"><i class="ph-bold ph-caret-right" aria-hidden="true"></i> Tableau (Bracket)</a></li>
+          <li><a href="palmares.html"><i class="ph-bold ph-caret-right" aria-hidden="true"></i> Palmarès</a></li>
+        </ul>
+      </div>
+      <div class="footer-col"><h4>Archives</h4>
+        <ul id="footerArchivesList">
+          <li><i class="ph-bold ph-spinner-gap ph-spin" aria-hidden="true"></i> Chargement...</li>
+        </ul>
+      </div>
+      <div class="footer-col"><h4>Ressources</h4>
+        <ul>
+          <li><a href="statistiques.html"><i class="ph-bold ph-caret-right" aria-hidden="true"></i> Statistiques</a></li>
+          <li><a href="reglement.html"><i class="ph-bold ph-caret-right" aria-hidden="true"></i> Règlement</a></li>
+          <li><a href="contact.html"><i class="ph-bold ph-caret-right" aria-hidden="true"></i> Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© <span id="footerYear"></span> GEH Mwanga — Institut Mwanga de Goma.</p></div>
+  </div>
+</footer>
+
+<button id="backToTop" class="btn btn-primary" aria-label="Retour en haut de page"><i class="ph-bold ph-arrow-up" aria-hidden="true"></i></button>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

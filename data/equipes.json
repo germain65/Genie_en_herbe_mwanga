@@ -1,0 +1,252 @@
+{
+  "equipes": [
+    {
+      "id": "6e_sciences",
+      "nom_officiel": "6ème Sciences",
+      "nom_court": "6e Sc",
+      "classe_section": "6ème Scientifique",
+      "couleur_identite": "#1A3A6B",
+      "logo": "assets/images/equipes/6e_sciences.png",
+      "editions_participees": [
+        "2022-2023",
+        "2023-2024",
+        "2024-2025"
+      ],
+      "encadrant": "M. Omatuku",
+      "capitaine_actuel": "Elie Ngoma",
+      "joueurs": [
+        {
+          "id": "joueur_001",
+          "nom": "Ngoma",
+          "prenom": "Elie",
+          "classe": "6e Sciences",
+          "photo": "assets/images/avatars/joueur_001.jpg",
+          "stats": {
+            "matchs_joues": 8,
+            "points_totaux": 1240,
+            "moyenne_par_match": 155,
+            "meilleure_performance": 210,
+            "victoires": 6,
+            "specialite": "Sciences",
+            "forme": [
+              "V",
+              "V",
+              "D",
+              "V",
+              "V"
+            ]
+          }
+        },
+        {
+          "id": "joueur_002",
+          "nom": "Bahati",
+          "prenom": "Rachel",
+          "classe": "6e Sciences",
+          "photo": "assets/images/avatars/joueur_002.jpg",
+          "stats": {
+            "matchs_joues": 7,
+            "points_totaux": 980,
+            "moyenne_par_match": 140,
+            "meilleure_performance": 195,
+            "victoires": 5,
+            "specialite": "Mathématiques",
+            "forme": [
+              "V",
+              "D",
+              "V",
+              "V",
+              "D"
+            ]
+          }
+        },
+        {
+          "id": "joueur_003",
+          "nom": "Kasereka",
+          "prenom": "John",
+          "classe": "6e Sciences",
+          "photo": "assets/images/avatars/joueur_003.jpg",
+          "stats": {
+            "matchs_joues": 8,
+            "points_totaux": 870,
+            "moyenne_par_match": 108,
+            "meilleure_performance": 180,
+            "victoires": 5,
+            "specialite": "Physique",
+            "forme": [
+              "D",
+              "V",
+              "V",
+              "D",
+              "V"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "5e_lettres",
+      "nom_officiel": "5ème Littéraire",
+      "nom_court": "5e Let",
+      "classe_section": "5ème Lettres",
+      "couleur_identite": "#CC1F2D",
+      "logo": "assets/images/equipes/5e_lettres.png",
+      "editions_participees": [
+        "2022-2023",
+        "2023-2024",
+        "2024-2025"
+      ],
+      "encadrant": "Mme. Kalulu",
+      "capitaine_actuel": "Jeanne Kahindo",
+      "joueurs": [
+        {
+          "id": "joueur_004",
+          "nom": "Kahindo",
+          "prenom": "Jeanne",
+          "classe": "5e Lettres",
+          "photo": "assets/images/avatars/joueur_004.jpg",
+          "stats": {
+            "matchs_joues": 8,
+            "points_totaux": 1150,
+            "moyenne_par_match": 143,
+            "meilleure_performance": 200,
+            "victoires": 5,
+            "specialite": "Littérature",
+            "forme": [
+              "V",
+              "V",
+              "V",
+              "D",
+              "V"
+            ]
+          }
+        },
+        {
+          "id": "joueur_005",
+          "nom": "Masika",
+          "prenom": "Grace",
+          "classe": "5e Lettres",
+          "photo": "assets/images/avatars/joueur_005.jpg",
+          "stats": {
+            "matchs_joues": 7,
+            "points_totaux": 910,
+            "moyenne_par_match": 130,
+            "meilleure_performance": 175,
+            "victoires": 4,
+            "specialite": "Histoire",
+            "forme": [
+              "D",
+              "V",
+              "D",
+              "V",
+              "V"
+            ]
+          }
+        },
+        {
+          "id": "joueur_006",
+          "nom": "Bulambo",
+          "prenom": "Patrick",
+          "classe": "5e Lettres",
+          "photo": "assets/images/avatars/joueur_006.jpg",
+          "stats": {
+            "matchs_joues": 8,
+            "points_totaux": 800,
+            "moyenne_par_match": 100,
+            "meilleure_performance": 165,
+            "victoires": 4,
+            "specialite": "Géographie",
+            "forme": [
+              "V",
+              "D",
+              "V",
+              "D",
+              "D"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "6e_biochimie",
+      "nom_officiel": "6ème Bio-Chimie",
+      "nom_court": "6e Bio",
+      "classe_section": "6ème Bio-Chimie",
+      "couleur_identite": "#1B6B3A",
+      "logo": "assets/images/equipes/default.png",
+      "editions_participees": [
+        "2022-2023",
+        "2024-2025"
+      ],
+      "encadrant": "M. Kasereka",
+      "capitaine_actuel": "Marc Mutombo",
+      "joueurs": [
+        {
+          "id": "joueur_007",
+          "nom": "Mutombo",
+          "prenom": "Marc",
+          "classe": "6e Bio-Chimie",
+          "photo": "assets/images/avatars/joueur_007.jpg",
+          "stats": {
+            "matchs_joues": 8,
+            "points_totaux": 1090,
+            "moyenne_par_match": 136,
+            "meilleure_performance": 190,
+            "victoires": 5,
+            "specialite": "Chimie",
+            "forme": [
+              "V",
+              "V",
+              "D",
+              "V",
+              "D"
+            ]
+          }
+        },
+        {
+          "id": "joueur_008",
+          "nom": "Byamungu",
+          "prenom": "Solange",
+          "classe": "6e Bio-Chimie",
+          "photo": "assets/images/avatars/joueur_008.jpg",
+          "stats": {
+            "matchs_joues": 7,
+            "points_totaux": 850,
+            "moyenne_par_match": 121,
+            "meilleure_performance": 170,
+            "victoires": 4,
+            "specialite": "Biologie",
+            "forme": [
+              "D",
+              "V",
+              "V",
+              "V",
+              "D"
+            ]
+          }
+        },
+        {
+          "id": "joueur_009",
+          "nom": "Bauma",
+          "prenom": "Victor",
+          "classe": "6e Bio-Chimie",
+          "photo": "assets/images/avatars/joueur_009.jpg",
+          "stats": {
+            "matchs_joues": 8,
+            "points_totaux": 760,
+            "moyenne_par_match": 95,
+            "meilleure_performance": 155,
+            "victoires": 3,
+            "specialite": "Sciences",
+            "forme": [
+              "D",
+              "D",
+              "V",
+              "D",
+              "V"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

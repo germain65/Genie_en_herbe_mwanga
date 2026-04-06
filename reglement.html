@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<noscript><p>Activez JavaScript pour accéder au site complet.</p></noscript>
+
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Règlement — GEH IMGoma</title>
+ <meta name="description" content="Les règles officielles du Championnat de Génies en Herbe IMGoma.">
+ <meta property="og:title" content="Règlement — GEH IMGoma">
+ <meta property="og:description" content="Les règles officielles du Championnat de Génies en Herbe IMGoma.">
+ <meta property="og:image" content="https://geh-imgoma.github.io/assets/images/og-default.jpg">
+ <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
+ <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="canonical" href="https://geh-imgoma.github.io/reglement.html">
+  <meta name="theme-color" content="#1A3A6B">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=Syne:wght@600;700;800&display=swa&display=swapp" as="style" onload="this.rel='stylesheet'">
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-follower" id="cursor-follower"></div>
+
+<header class="site-header" role="banner">
+ <div class="container"><div class="header-inner">
+ <a href="index.html" class="header-brand">
+ <div class="header-logo"><i class="ph-duotone ph-graduation-cap" aria-hidden="true"></i></div>
+ <div class="header-title"><strong>GEH Mwanga</strong></div>
+ </a>
+ <button class="hamburger" id="hamburgerBtn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mainNav">
+  <i class="ph-bold ph-list" id="hamburgerIcon"></i>
+</button>
+  <nav class="main-nav" id="mainNav">
+ <a href="index.html"><i class="ph-bold ph-house" aria-hidden="true"></i> Accueil</a>
+ <a href="reglement.html" class="active"><i class="ph-light ph-file-pdf" aria-hidden="true"></i> Règlement</a>
+ </nav>
+ </div></div>
+</header>
+<main style="padding-top: 3rem;">
+ <div class="container container-sm">
+ <span class="section-label">Règles Officielles</span>
+ <h1 style="margin-bottom: 2rem;">Règlement du GEH Mwanga</h1>
+ 
+ <!-- PDF Asset Placeholder -->
+ <div class="asset-placeholder" style="margin-bottom: 2rem;">
+ <i class="ph-light ph-file-pdf fa-3x" aria-label="Icône PDF"></i>
+ <p>Le règlement détaillé (assets/pdf/reglement/reglement_officiel.pdf)</p>
+ <a href="#" class="btn btn-outline" style="margin-top: 1rem;"><i class="ph-bold ph-download-simple" aria-hidden="true"></i> Télécharger le PDF complet</a>
+ </div>
+
+ <div class="card card-body" style="margin-bottom: 2rem;">
+ <h3 style="color: var(--color-primary);">1. Format d'un match</h3>
+ <p style="color: var(--color-text-secondary); margin-bottom: 1rem;">Un match oppose deux équipes de 4 joueurs. L'animateur pose les questions selon les grilles thématiques en deux grandes parties (~1050 pts au total).</p>
+ <ul style="color: var(--color-text-secondary); margin-bottom: 1rem; padding-left: 1.5rem;">
+ <li><strong>+10 points</strong> : Bonne réponse</li>
+ <li><strong>-10 points</strong> : Mauvaise réponse lors d'une interruption</li>
+ <li><strong>0 point</strong> : Sans réponse</li>
+ </ul>
+ </div>
+ </div>
+</main>
+<script src="assets/js/app.js"></script>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-bg-pattern"></div>
+  <div class="footer-tricolor"></div>
+  <div class="container footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="brand-logo"><div class="footer-logo-circle"><i class="ph-duotone ph-graduation-cap" aria-hidden="true"></i></div><strong>Institut Mwanga de Goma</strong></div><p style="color:rgba(255,255,255,0.6); font-size:0.9rem;">Site officiel du Championnat de Génies en Herbe.</p></div>
+      <div class="footer-col"><h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html"><i class="ph-bold ph-caret-right" aria-hidden="true"></i> Accueil</a></li>
+          <li><a href="classement-joueurs.html"><i class="ph-bold ph-user-list" aria-hidden="true"></i> Joueurs</a>
+      <a href="classement.html"><i class="ph-bold ph-caret-right" aria-hidden="true"></i> Classement</a></li>
+          <li><a href="bracket.html"><i class="ph-bold ph-caret-right" aria-hidden="true"></i> Tableau (Bracket)</a></li>
+          <li><a href="palmares.html"><i class="ph-bold ph-caret-right" aria-hidden="true"></i> Palmarès</a></li>
+        </ul>
+      </div>
+      <div class="footer-col"><h4>Archives</h4>
+        <ul id="footerArchivesList">
+          <li><i class="ph-bold ph-spinner-gap ph-spin" aria-hidden="true"></i> Chargement...</li>
+        </ul>
+      </div>
+      <div class="footer-col"><h4>Ressources</h4>
+        <ul>
+          <li><a href="statistiques.html"><i class="ph-bold ph-caret-right" aria-hidden="true"></i> Statistiques</a></li>
+          <li><a href="reglement.html"><i class="ph-bold ph-caret-right" aria-hidden="true"></i> Règlement</a></li>
+          <li><a href="contact.html"><i class="ph-bold ph-caret-right" aria-hidden="true"></i> Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© <span id="footerYear"></span> GEH Mwanga — Institut Mwanga de Goma.</p></div>
+  </div>
+</footer>
+
+  <button id="backToTop" class="btn btn-primary" aria-label="Retour en haut de page"><i class="ph-bold ph-arrow-up" aria-hidden="true"></i></button>
+</body>
+</html>

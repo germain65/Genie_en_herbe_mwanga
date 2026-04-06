@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<noscript><p>Activez JavaScript pour accéder au site complet.</p></noscript>
+
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Statistiques — GEH IMGoma</title>
+ <meta name="description" content="Statistiques complètes et records globaux du GEH Mwanga.">
+ <meta property="og:title" content="Statistiques — GEH IMGoma">
+ <meta property="og:description" content="Statistiques complètes et records globaux du GEH Mwanga.">
+ <meta property="og:image" content="https://geh-imgoma.github.io/assets/images/og-default.jpg">
+ <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
+ <link rel="stylesheet" href="assets/css/main.css">
+ <script>window.GEH_BASE = '.';</script>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="canonical" href="https://geh-imgoma.github.io/statistiques.html">
+  <meta name="theme-color" content="#1A3A6B">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=Syne:wght@600;700;800&display=swa&display=swapp" as="style" onload="this.rel='stylesheet'">
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-follower" id="cursor-follower"></div>
+
+<header class="site-header" role="banner">
+ <div class="container"><div class="header-inner">
+ <a href="index.html" class="header-brand">
+ <div class="header-logo"><i class="ph-duotone ph-graduation-cap" aria-hidden="true"></i></div>
+ <div class="header-title"><strong>GEH Mwanga</strong></div>
+ </a>
+ <button class="hamburger" id="hamburgerBtn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mainNav">
+  <i class="ph-bold ph-list" id="hamburgerIcon"></i>
+</button>
+  <nav class="main-nav" id="mainNav">
+ <a href="index.html"><i class="ph-bold ph-house" aria-hidden="true"></i> Accueil</a>
+ <a href="palmares.html"><i class="ph-duotone ph-trophy" aria-hidden="true"></i> Palmarès</a>
+ <a href="statistiques.html" class="active"><i class="ph-duotone ph-chart-bar" aria-hidden="true"></i> Statistiques</a>
+ </nav>
+ </div></div>
+</header>
+<main style="padding-top: 3rem;">
+ <div class="container">
+ <span class="section-label">Records Globaux</span>
+ <h1 style="margin-bottom: 2rem;">Statistiques & Records</h1>
+ 
+ <div id="statsContainer" class="grid-cards" style="margin-bottom: 3rem;">
+ <p><i class="ph-bold ph-spinner-gap ph-spin" aria-hidden="true"></i> Chargement des statistiques...</p>
+ </div>
+ </div>
+</main>
+<script src="assets/js/app.js"></script>
+<script>
+ document.addEventListener('DOMContentLoaded', () => {
+ setTimeout(async () => {
+ try {
+ const res = await fetch('data/statistiques.json');
+ const dt = await res.json();
+ const rec = dt.records_globaux;
+ const eqTitree = GEH.getEquipe(rec.equipe_plus_titree.id);
+ const eqMaxScore = GEH.getEquipe(rec.score_le_plus_eleve.equipe);
+ 
+ document.getElementById('statsContainer').innerHTML = `
+ <div class="card card-body" style="text-align:center;">
+ <span class="badge badge-gold" style="margin-bottom:1rem;"><i class="ph-duotone ph-crown" aria-hidden="true"></i> Équipe la plus titrée</span>
+ <h3 style="color:var(--color-primary);">${eqTitree.nom_officiel}</h3>
+ <p style="font-size:3rem; font-weight:bold; line-height:1; font-family:var(--font-mono);">${rec.equipe_plus_titree.nb_titres}</p>
+ <p style="color:var(--color-text-secondary); text-transform:uppercase; font-size:0.875rem;">Titres remportés</p>
+ </div>
+ 
+ <div class="card card-body" style="text-align:center;">
+ <span class="badge badge-blue" style="margin-bottom:1rem;"><i class="ph-duotone ph-trend-up" aria-hidden="true"></i> Score le plus élevé</span>
+ <h3 style="color:var(--color-primary);">${eqMaxScore.nom_officiel}</h3>
+ <p style="font-size:3rem; font-weight:bold; line-height:1; color:var(--color-accent-green); font-family:var(--font-mono);">${rec.score_le_plus_eleve.score}</p>
+ <p style="color:var(--color-text-secondary); text-transform:uppercase; font-size:0.875rem;">Match: <a href="match.html?id=${rec.score_le_plus_eleve.match_id}">${rec.score_le_plus_eleve.match_id}</a></p>
+ </div>
+ 
+ <div class="card card-body" style="text-align:center;">
+ <span class="badge badge-red" style="margin-bottom:1rem;"><i class="ph-duotone ph-arrows-out-line-horizontal" aria-hidden="true"></i> Plus grand écart</span>
+ <h3 style="color:var(--color-primary);">+${rec.plus_grand_ecart.ecart} pts</h3>
+ <p style="color:var(--color-text-secondary); text-transform:uppercase; font-size:0.875rem; margin-top:1rem;">Match: <a href="match.html?id=${rec.plus_grand_ecart.match_id}">${rec.plus_grand_ecart.match_id}</a></p>
+ </div>
+ `;
+ } catch(e) {}
+ }, 400);
+ });
+</script>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-bg-pattern"></div>
+  <div class="footer-tricolor"></div>
+  <div class="container footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="brand-logo"><div class="footer-logo-circle"><i class="ph-duotone ph-graduation-cap" aria-hidden="true"></i></div><strong>Institut Mwanga de Goma</strong></div><p style="color:rgba(255,255,255,0.6); font-size:0.9rem;">Site officiel du Championnat de Génies en Herbe.</p></div>
+      <div class="footer-col"><h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html"><i class="ph-bold ph-caret-right" aria-hidden="true"></i> Accueil</a></li>
+          <li><a href="classement-joueurs.html"><i class="ph-bold ph-user-list" aria-hidden="true"></i> Joueurs</a>
+      <a href="classement.html"><i class="ph-bold ph-caret-right" aria-hidden="true"></i> Classement</a></li>
+          <li><a href="bracket.html"><i class="ph-bold ph-caret-right" aria-hidden="true"></i> Tableau (Bracket)</a></li>
+          <li><a href="palmares.html"><i class="ph-bold ph-caret-right" aria-hidden="true"></i> Palmarès</a></li>
+        </ul>
+      </div>
+      <div class="footer-col"><h4>Archives</h4>
+        <ul id="footerArchivesList">
+          <li><i class="ph-bold ph-spinner-gap ph-spin" aria-hidden="true"></i> Chargement...</li>
+        </ul>
+      </div>
+      <div class="footer-col"><h4>Ressources</h4>
+        <ul>
+          <li><a href="statistiques.html"><i class="ph-bold ph-caret-right" aria-hidden="true"></i> Statistiques</a></li>
+          <li><a href="reglement.html"><i class="ph-bold ph-caret-right" aria-hidden="true"></i> Règlement</a></li>
+          <li><a href="contact.html"><i class="ph-bold ph-caret-right" aria-hidden="true"></i> Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© <span id="footerYear"></span> GEH Mwanga — Institut Mwanga de Goma.</p></div>
+  </div>
+</footer>
+
+  <button id="backToTop" class="btn btn-primary" aria-label="Retour en haut de page"><i class="ph-bold ph-arrow-up" aria-hidden="true"></i></button>
+</body>
+</html>

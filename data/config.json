@@ -1,0 +1,22 @@
+{
+  "championnat": {
+    "nom": "Championnat de Génies en Herbe",
+    "nom_court": "GEH Mwanga",
+    "etablissement": "Institut Mwanga de Goma",
+    "sigle": "IMGoma",
+    "ville": "Goma",
+    "province": "Nord-Kivu",
+    "pays": "République Démocratique du Congo",
+    "site_url": "https://geh-imgoma.github.io",
+    "premiere_edition": "2013-2014",
+    "currentEdition": "2025-2026",
+    "logo": "assets/images/logos/imgoma-logo.svg",
+    "couleurs": {
+      "principale": "#1A3A6B",
+      "accent1": "#CC1F2D",
+      "accent2": "#1B6B3A",
+      "champion": "#C9A84C"
+    },
+    "last_update": "2026-04-06"
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "matchs": [
+    {
+      "id": "2025-2026-M01",
+      "edition": "2025-2026",
+      "numero_match": 1,
+      "phase": "phase_groupe",
+      "date": "2025-11-05",
+      "heure": "14:30",
+      "lieu": "Grande Salle, IMGoma",
+      "equipe_A": "6e_sciences",
+      "equipe_B": "5e_lettres",
+      "score_A": 340,
+      "score_B": 410,
+      "vainqueur": "5e_lettres",
+      "homme_du_match": "joueur_004",
+      "score_par_manche": {
+        "manchette_AB": { "A": 20, "B": 10 },
+        "math_individuel": { "A": 40, "B": 20 },
+        "math_collectif": { "A": 50, "B": 30 },
+        "sciences": { "A": 80, "B": 40 },
+        "francais": { "A": 30, "B": 90 },
+        "histoire_geo": { "A": 20, "B": 80 },
+        "culture_generale": { "A": 50, "B": 60 },
+        "actualites": { "A": 30, "B": 40 },
+        "sport_loisirs": { "A": 20, "B": 40 },
+        "non_repondues": 300
+      },
+      "nb_questions_posees": 95,
+      "nb_penalites_A": 2,
+      "nb_penalites_B": 1,
+      "arbitre_principal": "M. Bahati",
+      "resume": "Victoire impressionnante de la 5ème Lettres pour lancer la saison."
+    },
+    {
+      "id": "2024-2025-F01",
+      "edition": "2024-2025",
+      "numero_match": 32,
+      "phase": "finale",
+      "date": "2025-05-15",
+      "heure": "10:00",
+      "lieu": "Grande Salle, IMGoma",
+      "equipe_A": "6e_sciences",
+      "equipe_B": "5e_lettres",
+      "score_A": 460,
+      "score_B": 480,
+      "vainqueur": "5e_lettres",
+      "homme_du_match": "joueur_004",
+      "score_par_manche": {
+        "manchette_AB": { "A": 20, "B": 20 },
+        "sciences": { "A": 100, "B": 50 },
+        "francais": { "A": 50, "B": 90 },
+        "culture_generale": { "A": 90, "B": 100 },
+        "associations": { "A": 80, "B": 90 },
+        "mixte": { "A": 120, "B": 130 },
+        "non_repondues": 110
+      },
+      "nb_questions_posees": 110,
+      "nb_penalites_A": 1,
+      "nb_penalites_B": 3,
+      "arbitre_principal": "M. Kamalebo",
+      "resume": "Une finale haletante qui s'est jouée sur la toute dernière question de l'épreuve mixte."
+    },
+    {
+      "id": "2024-2025-H01",
+      "edition": "2024-2025",
+      "phase": "huitieme",
+      "equipe_A": "6e_sciences",
+      "equipe_B": "3e_pedagogie",
+      "score_A": 680,
+      "score_B": 350,
+      "vainqueur": "6e_sciences",
+      "homme_du_match": "joueur_001",
+      "date": "2025-04-20",
+      "score_par_manche": {
+        "culture_generale": { "A": 180, "B": 100 },
+        "math_individuel": { "A": 150, "B": 80 },
+        "sciences": { "A": 200, "B": 100 },
+        "francais": { "A": 150, "B": 70 },
+        "non_repondues": 20
+      }
+    },
+    {
+      "id": "2024-2025-Q01",
+      "edition": "2024-2025",
+      "phase": "quart",
+      "equipe_A": "6e_sciences",
+      "equipe_B": "4e_biochimie",
+      "score_A": 550,
+      "score_B": 480,
+      "vainqueur": "6e_sciences",
+      "homme_du_match": "joueur_001",
+      "date": "2025-05-01",
+      "score_par_manche": {
+        "culture_generale": { "A": 140, "B": 120 },
+        "math_individuel": { "A": 110, "B": 100 },
+        "sciences": { "A": 160, "B": 150 },
+        "francais": { "A": 140, "B": 110 },
+        "non_repondues": 20
+      }
+    },
+    {
+      "id": "2024-2025-D02",
+      "edition": "2024-2025",
+      "phase": "demi",
+      "equipe_A": "5e_lettres",
+      "equipe_B": "6e_biochimie",
+      "score_A": 520,
+      "score_B": 490,
+      "vainqueur": "5e_lettres",
+      "homme_du_match": "joueur_005",
+      "date": "2025-05-11",
+      "score_par_manche": {
+        "culture_generale": { "A": 130, "B": 120 },
+        "math_individuel": { "A": 100, "B": 110 },
+        "sciences": { "A": 140, "B": 150 },
+        "francais": { "A": 150, "B": 110 },
+        "non_repondues": 40
+      }
+    }
+  ]
+}

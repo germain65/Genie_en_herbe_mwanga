@@ -1,0 +1,34 @@
+{
+  "records_globaux": {
+    "equipe_plus_titree": {
+      "nom": "6e_sciences",
+      "nb_titres": 4,
+      "id": "6e_sciences"
+    },
+    "plus_grand_ecart": {
+      "match_id": "2025-2026-M01",
+      "ecart": 70,
+      "edition": "2025-2026"
+    },
+    "score_le_plus_eleve": {
+      "equipe": "5e_lettres",
+      "score": 480,
+      "match_id": "2024-2025-F01"
+    },
+    "moyenne_points_par_manche": 56,
+    "serie_victoires_record": {
+      "equipe": "5e_lettres",
+      "nb_victoires": 14,
+      "editions": [
+        "2021-2022",
+        "2022-2023"
+      ]
+    }
+  },
+  "totaux": {
+    "editions": 13,
+    "matchs_estimes": 382,
+    "points_marques_estimes": 151690,
+    "questions_posees_estimees": 38000
+  }
+}

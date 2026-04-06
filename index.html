@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<noscript><p>Activez JavaScript pour accéder au site complet.</p></noscript>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accueil — GEH IMGoma</title>
+  <meta name="description" content="Site officiel du Championnat de Génies en Herbe de l'Institut Mwanga de Goma. L'excellence depuis 2013.">
+  <meta property="og:title" content="Accueil — GEH IMGoma">
+  <meta property="og:description" content="Site officiel du Championnat de Génies en Herbe de l'Institut Mwanga de Goma. L'excellence depuis 2013.">
+  <meta property="og:image" content="https://geh-imgoma.github.io/assets/images/og-default.jpg">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <meta name="theme-color" content="#1A3A6B">
+  <link rel="canonical" href="https://geh-imgoma.github.io/index.html">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=Syne:wght@600;700;800&display=swa&display=swapp" as="style">
+  <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script>window.GEH_BASE = '.';</script>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-follower" id="cursor-follower"></div>
+
+<header class="site-header" role="banner">
+  <div class="container"><div class="header-inner" style="display:flex; justify-content:space-between; align-items:center; width:100%;">
+    <a href="index.html" class="header-brand">
+      <div class="header-logo"><i class="ph-duotone ph-graduation-cap" aria-hidden="true"></i></div>
+      <div class="header-title"><strong>GEH Mwanga</strong><span>Institut Mwanga de Goma · RDC</span></div>
+    </a>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mainNav">
+  <i class="ph-bold ph-list" id="hamburgerIcon"></i>
+</button>
+  <nav class="main-nav" id="mainNav">
+      <a href="index.html" class="active"><i class="ph-bold ph-house" aria-hidden="true"></i> Accueil</a>
+      <a href="presentation.html"><i class="ph-bold ph-info" aria-hidden="true"></i> Présentation</a>
+      <a href="archives.html"><i class="ph-bold ph-clock-counter-clockwise" aria-hidden="true"></i> Archives</a>
+      <a href="classement-joueurs.html"><i class="ph-bold ph-user-list" aria-hidden="true"></i> Joueurs</a>
+      <a href="classement.html"><i class="ph-bold ph-list-numbers" aria-hidden="true"></i> Classement</a>
+      <span class="nav-edition-badge">...</span>
+    </nav>
+  </div></div>
+</header>
+
+<div class="hero-section" id="hero">
+  <div class="hero-bg"><img loading="lazy" src="assets/images/photos/hero.jpg" alt="Photo Hero" width="1920" height="1080" onerror="this.style.display='none'"></div>
+  <div class="hero-gradient"></div>
+  <div class="noise"></div>
+  <div class="container hero-content">
+    <span class="badge badge-gold" style="margin-bottom: 2rem; animation: fadeInUp 1s ease 0.2s forwards; opacity:0; font-size:1rem; padding: 0.5rem 1rem;">Excellence Académique · Depuis 2013</span>
+    <h1><span>Génies en Herbe</span><br><span>IMGoma</span></h1>
+    <p class="hero-subtitle">Le championnat intellectuel de référence réunissant les esprits les plus brillants de l'Institut Mwanga de Goma.</p>
+    <div class="hero-actions">
+      <a href="edition.html?id=2025-2026" class="btn btn-primary"><i class="ph-bold ph-play" aria-hidden="true"></i> Édition en cours</a>
+      <a href="archives.html" class="btn btn-outline"><i class="ph-bold ph-archive-box" aria-hidden="true"></i> Explorer les archives</a>
+    </div>
+  </div>
+</div>
+
+<main>
+  <section class="section">
+    <div class="container">
+      <div class="fade-up" style="text-align: center; margin-bottom: 4rem;">
+        <span class="section-label">En direct</span>
+        <h2>Derniers Résultats</h2>
+        <div class="divider" style="margin: 1.5rem auto;"></div>
+      </div>
+      <div id="latestMatchs">
+        <p style="text-align:center;"><i class="ph-bold ph-spinner-gap ph-spin" aria-hidden="true"></i> Chargement des matchs...</p>
+      </div>
+      <div class="fade-up" style="text-align: center; margin-top: 4rem;">
+        <a href="edition.html?id=2025-2026" class="btn btn-outline btn-dark">Voir le classement complet <i class="ph-bold ph-arrow-right" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--color-white); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+    <div class="container">
+      <div class="grid-cards fade-up">
+        <div class="card stat-block text-center do-count" data-target="13">
+          <i class="ph-duotone ph-calendar-check stat-icon" aria-hidden="true"></i>
+          <h3 class="stat-num">0</h3>
+          <p class="section-label" style="color: var(--color-text-secondary); margin:0;">Éditions</p>
+        </div>
+        <div class="card stat-block text-center do-count" data-target="380" data-plus="true">
+          <i class="ph-duotone ph-users-three stat-icon" aria-hidden="true"></i>
+          <h3 class="stat-num">0</h3>
+          <p class="section-label" style="color: var(--color-text-secondary); margin:0;">Matchs Joués</p>
+        </div>
+        <div class="card stat-block text-center do-count" data-target="150" data-plus="true">
+          <i class="ph-duotone ph-lightning stat-icon" aria-hidden="true"></i>
+          <h3 class="stat-num">0</h3>
+          <p class="section-label" style="color: var(--color-text-secondary); margin:0;">Milliers de points</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-bg-pattern"></div>
+  <div class="footer-tricolor"></div>
+  <div class="container footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="brand-logo"><div class="footer-logo-circle"><i class="ph-duotone ph-graduation-cap" aria-hidden="true"></i></div><strong>Institut Mwanga de Goma</strong></div><p style="color:rgba(255,255,255,0.6); font-size:0.9rem;">Site officiel du Championnat de Génies en Herbe.</p></div>
+      <div class="footer-col"><h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html"><i class="ph-bold ph-caret-right" aria-hidden="true"></i> Accueil</a></li>
+          <li><a href="classement.html"><i class="ph-bold ph-caret-right" aria-hidden="true"></i> Classement</a></li>
+          <li><a href="bracket.html"><i class="ph-bold ph-caret-right" aria-hidden="true"></i> Tableau (Bracket)</a></li>
+          <li><a href="palmares.html"><i class="ph-bold ph-caret-right" aria-hidden="true"></i> Palmarès</a></li>
+        </ul>
+      </div>
+      <div class="footer-col"><h4>Archives</h4>
+        <ul id="footerArchivesList">
+          <li><i class="ph-bold ph-spinner-gap ph-spin" aria-hidden="true"></i> Chargement...</li>
+        </ul>
+      </div>
+      <div class="footer-col"><h4>Ressources</h4>
+        <ul>
+          <li><a href="statistiques.html"><i class="ph-bold ph-caret-right" aria-hidden="true"></i> Statistiques</a></li>
+          <li><a href="reglement.html"><i class="ph-bold ph-caret-right" aria-hidden="true"></i> Règlement</a></li>
+          <li><a href="contact.html"><i class="ph-bold ph-caret-right" aria-hidden="true"></i> Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© <span id="footerYear"></span> GEH Mwanga — Institut Mwanga de Goma.</p></div>
+  </div>
+</footer>
+
+<script src="assets/js/app.js"></script>
+  <button id="backToTop" class="btn btn-primary" aria-label="Retour en haut de page"><i class="ph-bold ph-arrow-up" aria-hidden="true"></i></button>
+</body>
+</html>

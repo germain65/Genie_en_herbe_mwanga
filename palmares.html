@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<noscript><p>Activez JavaScript pour accéder au site complet.</p></noscript>
+
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Palmarès — GEH IMGoma</title>
+ <meta name="description" content="Les équipes titrées au GEH Mwanga.">
+ <meta property="og:title" content="Palmarès — GEH IMGoma">
+ <meta property="og:description" content="Les équipes titrées au GEH Mwanga.">
+ <meta property="og:image" content="https://geh-imgoma.github.io/assets/images/og-default.jpg">
+ <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
+ <link rel="stylesheet" href="assets/css/main.css">
+ <script>window.GEH_BASE = '.';</script>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="canonical" href="https://geh-imgoma.github.io/palmares.html">
+  <meta name="theme-color" content="#1A3A6B">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=Syne:wght@600;700;800&display=swa&display=swapp" as="style" onload="this.rel='stylesheet'">
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-follower" id="cursor-follower"></div>
+
+<header class="site-header" role="banner">
+ <div class="container"><div class="header-inner">
+ <a href="index.html" class="header-brand">
+ <div class="header-logo"><i class="ph-duotone ph-graduation-cap" aria-hidden="true"></i></div>
+ <div class="header-title"><strong>GEH Mwanga</strong></div>
+ </a>
+ <button class="hamburger" id="hamburgerBtn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mainNav">
+  <i class="ph-bold ph-list" id="hamburgerIcon"></i>
+</button>
+  <nav class="main-nav" id="mainNav">
+ <a href="index.html"><i class="ph-bold ph-house" aria-hidden="true"></i> Accueil</a>
+ <a href="classement-joueurs.html"><i class="ph-bold ph-user-list" aria-hidden="true"></i> Joueurs</a>
+      <a href="classement.html"><i class="ph-bold ph-list-numbers" aria-hidden="true"></i> Classement</a>
+ <a href="archives.html"><i class="ph-bold ph-clock-counter-clockwise" aria-hidden="true"></i> Archives</a>
+ <a href="palmares.html" class="active"><i class="ph-duotone ph-trophy" aria-hidden="true"></i> Palmarès</a>
+ </nav>
+ </div></div>
+</header>
+<div class="page-hero">
+ <div class="container">
+ <span class="page-hero-eyebrow">Les Champions</span>
+ <h1>Palmarès de l'IMGoma</h1>
+ </div>
+</div>
+<main>
+ <section class="section">
+ <div class="container">
+ <div class="asset-placeholder" style="margin-bottom: 3rem;">
+ <i class="ph-light ph-file-pdf fa-3x" aria-label="Icône PDF"></i>
+ <p>Document PDF récapitulatif du palmarès historique (assets/pdf/palmares/palmares_2013-2025.pdf)</p>
+ <a href="#" class="btn btn-outline" style="margin-top: 1rem;"><i class="ph-bold ph-download-simple" aria-hidden="true"></i> Télécharger</a>
+ </div>
+
+ <div id="palmaresList" class="grid-cards">
+ <p style="text-align: center;"><i class="ph-bold ph-spinner-gap ph-spin" aria-hidden="true"></i> Chargement...</p>
+ </div>
+ </div>
+ </section>
+</main>
+<script src="assets/js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(async () => {
+  try {
+  const res = await fetch('data/palmares.json');
+  if (!res.ok) return;
+  const d = await res.json();
+  const pList = d.palmares;
+  const container = document.getElementById('palmaresList');
+
+  if (pList && pList.length > 0) {
+  container.innerHTML = pList.map((p, idx) => {
+  const cEq = GEH.getEquipe(p.champion);
+  const fEq = p.finaliste ? GEH.getEquipe(p.finaliste) : null;
+  const mvpJoueur = p.mvp ? GEH.getJoueur(p.mvp) : null;
+  const mvpNom = p.mvp_nom || p.mvp || null;
+  const accentChamp = cEq.couleur_identite || 'var(--color-primary)';
+
+  // Champion logo or initials
+  const logoHtml = cEq.logo
+    ? `<img src="${cEq.logo}" alt="Logo ${cEq.nom_court}"
+        style="width:90px;height:90px;object-fit:contain;border-radius:16px;background:#fff;padding:8px;border:3px solid ${accentChamp};display:block;margin:0 auto 0.75rem;"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+       <div style="display:none;width:90px;height:90px;border-radius:16px;background:${accentChamp}20;border:3px solid ${accentChamp};align-items:center;justify-content:center;font-weight:900;font-size:2rem;color:${accentChamp};margin:0 auto 0.75rem;">${cEq.nom_court?.substring(0,2) || '?'}</div>`
+    : `<div style="width:90px;height:90px;border-radius:16px;background:${accentChamp}20;border:3px solid ${accentChamp};display:flex;align-items:center;justify-content:center;font-weight:900;font-size:2rem;color:${accentChamp};margin:0 auto 0.75rem;">${cEq.nom_court?.substring(0,2) || '?'}</div>`;
+
+  // MVP block
+  let mvpHtml = '';
+  if (mvpJoueur) {
+    mvpHtml = GEH.renderAvatarCard({
+      photo: mvpJoueur.photo,
+      nom: mvpJoueur.nom,
+      prenom: mvpJoueur.prenom,
+      label: '🏅 MVP',
+      sublabel: mvpJoueur.equipe?.nom_court,
+      accentColor: 'var(--color-gold)'
+    });
+  } else if (mvpNom) {
+    mvpHtml = `<div style="display:flex;align-items:center;gap:0.75rem;">
+      <div style="width:52px;height:52px;border-radius:50%;background:var(--color-gold)20;border:2px solid var(--color-gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+        <i class="ph-fill ph-user" style="font-size:1.5rem;color:var(--color-gold);"></i>
+      </div>
+      <div>
+        <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--color-gold);font-weight:700;margin-bottom:0.2rem;">🏅 MVP</div>
+        <div style="font-family:var(--font-heading);font-size:1rem;font-weight:800;">${mvpNom}</div>
+      </div>
+    </div>`;
+  }
+
+  return `
+  <div class="card card-body" style="border-top:4px solid ${accentChamp};transition-delay:${idx*0.15}s;animation:fadeUp 0.5s ease both ${idx*0.15}s;">
+    <div style="color:var(--color-gold);font-family:var(--font-heading);font-size:1.3rem;margin-bottom:1.25rem;text-align:center;">
+      <i class="ph-duotone ph-medal" aria-hidden="true"></i> Édition ${p.edition}
+    </div>
+
+    <div style="text-align:center;margin-bottom:1.25rem;">
+      ${logoHtml}
+      <div style="font-size:0.75rem;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.25rem;">
+        <i class="ph-fill ph-trophy" style="color:var(--color-gold);" aria-hidden="true"></i> Champion
+      </div>
+      <a href="equipe.html?id=${cEq.id}" style="font-size:1.2rem;font-weight:800;color:${accentChamp};font-family:var(--font-heading);">${cEq.nom_officiel}</a>
+      ${p.score_finale ? `<div style="font-size:0.85rem;color:var(--color-text-secondary);margin-top:0.3rem;">${p.score_finale.A} – ${p.score_finale.B}</div>` : ''}
+    </div>
+
+    ${fEq ? `
+    <div style="text-align:center;padding:0.75rem 0;border-top:1px solid var(--color-border);border-bottom:1px solid var(--color-border);margin-bottom:1rem;">
+      <div style="font-size:0.75rem;color:var(--color-text-secondary);text-transform:uppercase;margin-bottom:0.2rem;">
+        <i class="ph-duotone ph-trophy" style="color:var(--color-border);" aria-hidden="true"></i> Finaliste
+      </div>
+      <a href="equipe.html?id=${fEq.id}" style="font-weight:700;color:var(--color-text-secondary);">${fEq.nom_officiel}</a>
+    </div>` : ''}
+
+    ${mvpHtml ? `<div style="margin-top:0.75rem;">${mvpHtml}</div>` : ''}
+
+    ${p.mention_speciale ? `<div style="margin-top:1rem;padding:0.5rem 0.75rem;border-radius:8px;background:var(--color-gold)10;border:1px solid var(--color-gold)30;font-size:0.8rem;color:var(--color-text-secondary);text-align:center;font-style:italic;">"${p.mention_speciale}"</div>` : ''}
+  </div>`;
+  }).join('');
+  }
+  } catch(e) { console.error(e); }
+  }, 500);
+  });
+</script>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-bg-pattern"></div>
+  <div class="footer-tricolor"></div>
+  <div class="container footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="brand-logo"><div class="footer-logo-circle"><i class="ph-duotone ph-graduation-cap" aria-hidden="true"></i></div><strong>Institut Mwanga de Goma</strong></div><p style="color:rgba(255,255,255,0.6); font-size:0.9rem;">Site officiel du Championnat de Génies en Herbe.</p></div>
+      <div class="footer-col"><h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html"><i class="ph-bold ph-caret-right" aria-hidden="true"></i> Accueil</a></li>
+          <li><a href="classement.html"><i class="ph-bold ph-caret-right" aria-hidden="true"></i> Classement</a></li>
+          <li><a href="bracket.html"><i class="ph-bold ph-caret-right" aria-hidden="true"></i> Tableau (Bracket)</a></li>
+          <li><a href="palmares.html"><i class="ph-bold ph-caret-right" aria-hidden="true"></i> Palmarès</a></li>
+        </ul>
+      </div>
+      <div class="footer-col"><h4>Archives</h4>
+        <ul id="footerArchivesList">
+          <li><i class="ph-bold ph-spinner-gap ph-spin" aria-hidden="true"></i> Chargement...</li>
+        </ul>
+      </div>
+      <div class="footer-col"><h4>Ressources</h4>
+        <ul>
+          <li><a href="statistiques.html"><i class="ph-bold ph-caret-right" aria-hidden="true"></i> Statistiques</a></li>
+          <li><a href="reglement.html"><i class="ph-bold ph-caret-right" aria-hidden="true"></i> Règlement</a></li>
+          <li><a href="contact.html"><i class="ph-bold ph-caret-right" aria-hidden="true"></i> Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© <span id="footerYear"></span> GEH Mwanga — Institut Mwanga de Goma.</p></div>
+  </div>
+</footer>
+
+  <button id="backToTop" class="btn btn-primary" aria-label="Retour en haut de page"><i class="ph-bold ph-arrow-up" aria-hidden="true"></i></button>
+</body>
+</html>

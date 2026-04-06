@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /404.html
+Sitemap: https://geh-imgoma.github.io/sitemap.xml

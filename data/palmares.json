@@ -1,0 +1,24 @@
+{
+  "palmares": [
+    {
+      "edition": "2023-2024",
+      "champion": "6e_sciences",
+      "finaliste": "5e_lettres",
+      "troisieme": "4e_biochimie",
+      "score_finale": { "A": 510, "B": 480 },
+      "mvp": null,
+      "mvp_nom": "David Kasongo",
+      "mention_speciale": "Finale d'anthologie"
+    },
+    {
+      "edition": "2022-2023",
+      "champion": "5e_lettres",
+      "finaliste": "6e_biochimie",
+      "troisieme": "5e_pedagogie",
+      "score_finale": { "A": 460, "B": 420 },
+      "mvp": null,
+      "mvp_nom": "Sarah Mwamba",
+      "mention_speciale": "10 ans du GEH Mwanga"
+    }
+  ]
+}
